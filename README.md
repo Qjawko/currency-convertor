@@ -40,7 +40,7 @@ You can configure it using an environment variable:
 
 - Environment variable:
   ```bash
-  export CURRENCY_CONVERTOR_API_KEY=YOUR_COINMARKETCAP_API_KEY
+  export CMC_API_KEY=YOUR_COINMARKETCAP_API_KEY
   ```
 
 ## Usage
