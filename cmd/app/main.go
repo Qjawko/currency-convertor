@@ -12,7 +12,7 @@ import (
 	"syscall"
 	"time"
 
-	"github.com/qjawko/currency-convertor/internal/entity"
+	"github.com/qjawko/currency-convertor/internal/domain"
 	"github.com/qjawko/currency-convertor/internal/gateway/coinmarketcap"
 	"github.com/qjawko/currency-convertor/internal/usecase"
 	"github.com/qjawko/currency-convertor/pkg/config"
@@ -20,7 +20,7 @@ import (
 
 // Converter provides methods to handle currency conversion.
 type Converter interface {
-	Convert(ctx context.Context, request entity.ConversionRequest) (entity.ConversionResult, error)
+	Convert(ctx context.Context, request domain.ConversionRequest) (domain.ConversionResult, error)
 }
 
 type App struct {
@@ -56,7 +56,7 @@ func (app *App) Run(ctx context.Context, args []string) error {
 	fromCurrency := args[2]
 	toCurrency := args[3]
 
-	result, err := app.converter.Convert(ctx, entity.ConversionRequest{
+	result, err := app.converter.Convert(ctx, domain.ConversionRequest{
 		Amount:       amount,
 		FromCurrency: fromCurrency,
 		ToCurrency:   toCurrency,

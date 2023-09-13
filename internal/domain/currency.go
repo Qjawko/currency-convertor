@@ -1,4 +1,4 @@
-package entity
+package domain
 
 // ConversionResult represents the result of converting one currency to another.
 type ConversionResult struct {
